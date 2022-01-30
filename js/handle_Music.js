@@ -787,10 +787,10 @@ const app = {
         side_input.onkeydown = function(event) {
             if(event.key == "Enter") {
                 handle_result() 
-                // var windowWidth = $(document).width();
-                // if(windowWidth < 1020) {
-                //     side_narbar_menu.click()
-                // }
+                var windowWidth = $(document).width();
+                if(windowWidth < 1020) {
+                    side_narbar_menu.click()
+                }
             }
         }
         

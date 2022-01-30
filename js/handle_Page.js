@@ -113,9 +113,12 @@ side_narbar_menu.addEventListener('click', function() {
 })
 
 search_btn.addEventListener('click', function() {
-    expand_side();
-    search_input.focus();
-    return check = false;
+    var windowWidth = $(document).width();
+    if(windowWidth > 768) {
+        expand_side();
+        search_input.focus();
+        return check = false;
+    }
 })
 
 // Item SIDE
