@@ -188,45 +188,36 @@
     z-index: 5;
 
     flex: 1;
-    height: 4px;
+    height: 12px;
     background: rgb(77, 77, 77);
     outline: none;
     opacity: 0.7;
     transition: opacity .2s;
     border-radius: 5px;
+    cursor: pointer;
 
     /* quá trình */
-    -webkit-appearance: none;
-    background-color: transparent;
+    /* -webkit-appearance: none; */
+    /* background-color: transparent; */
+    background-color: red;
 }
-.time_progress::-webkit-slider-thumb {
+/* .time_progress::-webkit-slider-thumb {
     appearance: none;
-    /* width: 10px;
-    height: 4px;
-    background: var(--hover); */
-}
-.time_progress:hover {
-    cursor: pointer;
+} */
+/* .time_progress:hover {
     height: 6px;
-}
+} */
 .time_progress:hover::-webkit-slider-thumb {
     width: 18px;
     height: 18px;
     background-color: transparent;
-    /* border-radius: 50%;
-    border: 4px solid var(--text); */
 }
 
 .time_progress_nav {
-    /* display: none; */
-
     position: absolute;
     width: calc(100% - 2*67px);
-
-
-    height: 4px;
+    height: 6px;
     border-radius: 5px;
-    /* background-color: red; */
     background-color: var(--background-search);
     transition: all .1s linear;
 }
@@ -235,16 +226,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 4px;
+    height: 6px;
     border-radius: 5px;
     background-color: var(--text);
-
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-
     width: 0;
-
     transition: all 50ms linear;
 }
 .time_progress_nav_update::after {
@@ -264,12 +249,14 @@
 
 .time_progress:hover ~ .time_progress_nav, 
 .time_progress:hover ~ .time_progress_nav .time_progress_nav_update {
-    height: 6px ;
+    height: 8px ;
 }
 .time_progress:hover ~ .time_progress_nav .time_progress_nav_update::after {
     display: block;
     top: 3px;
 }
+
+
 
 /* actions */
 .actions {
