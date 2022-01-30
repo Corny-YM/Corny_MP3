@@ -188,22 +188,25 @@
     z-index: 5;
 
     flex: 1;
-    height: 12px;
+    height: 18px;
     background: rgb(77, 77, 77);
     outline: none;
     opacity: 0.7;
     transition: opacity .2s;
     border-radius: 5px;
-    cursor: pointer;
 
+    cursor: pointer;
     /* quá trình */
-    /* -webkit-appearance: none; */
-    /* background-color: transparent; */
-    background-color: red;
+    
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    background-color: transparent;
 }
-/* .time_progress::-webkit-slider-thumb {
+.time_progress::-webkit-slider-thumb {
     appearance: none;
-} */
+    width: 18px;
+    height: 18px;
+}
 /* .time_progress:hover {
     height: 6px;
 } */
@@ -216,7 +219,7 @@
 .time_progress_nav {
     position: absolute;
     width: calc(100% - 2*67px);
-    height: 6px;
+    height: 4px;
     border-radius: 5px;
     background-color: var(--background-search);
     transition: all .1s linear;
@@ -226,7 +229,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 6px;
+    height: 4px;
     border-radius: 5px;
     background-color: var(--text);
     width: 0;
@@ -249,7 +252,7 @@
 
 .time_progress:hover ~ .time_progress_nav, 
 .time_progress:hover ~ .time_progress_nav .time_progress_nav_update {
-    height: 8px ;
+    height: 6px ;
 }
 .time_progress:hover ~ .time_progress_nav .time_progress_nav_update::after {
     display: block;

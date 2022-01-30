@@ -132,7 +132,7 @@
 
 
     .listSongs_songs_main {
-        height: calc(100vh - 280px);
+        height: calc(100vh - 287px);
     }
     .result_found_listSongs.listSongs_songs_main {
         height: calc(100vh - 160px);
@@ -298,6 +298,12 @@
 @media (max-width: 745px) {
     .information {
         height: 84px;
+    }
+
+    .info,
+    .actions,
+    .controls {
+        height: 65px;
     }
 
     .random,

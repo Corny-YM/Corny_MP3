@@ -17,9 +17,6 @@ result_not_found_text = take_one('.result_not_found_text')
 const side_input = take_one('.side_input')
 
 // Footer
-// 2 biến này ở bên handle_Page
-// const info_name = take_one('.info_name')
-// const info_author = take_one('.info_author')
 const info_image = take_one('.image img')
 const btn_play_pause = take_all('.btn_play-pause')
 
@@ -445,10 +442,6 @@ const app = {
     render: function() {
 
         const htmls = this.songs.map(function(song, index) {
-            // data-index="${index}": 
-            // ${index === app.currentIndex ? 'active' : ''}
-            // var contents = 
-            // songs_data.push(contents)
             return `
             <div class="song "  data-index="${index}"> 
                 <div class="song_responsiveDetails song_playing">
@@ -555,6 +548,7 @@ const app = {
             if(audio.duration) {
                 // If it's not moving 
                 if(isMoving == false) {
+                    time_progress
                     const currentProgress = (audio.currentTime / audio.duration) * 100
                     // chiều dài thẻ div
                     time_progress_nav_update.forEach(function(e_nav_update) {
@@ -605,16 +599,6 @@ const app = {
                         audio.currentTime = seekTime
                         isMoving = false // Đang không di chuyển thanh thời gian
                     }
-                    element.ontouchmove = function() {
-                        // thời gian tại địa điểm changed
-                        audio.currentTime = seekTime
-                        isMoving = true // Đang không di chuyển thanh thời gian
-                    }
-                    element.ontouchstart = function() {
-                        // thời gian tại địa điểm changed
-                        audio.currentTime = seekTime
-                        isMoving = true // Đang không di chuyển thanh thời gian
-                    }
                     element.ontouchend = function() {
                         // thời gian tại địa điểm changed
                         audio.currentTime = seekTime
@@ -630,7 +614,8 @@ const app = {
                 }
             }
             element.oninput = change_time
-            
+            element.ontouchstart = change_time;
+            element.ontouchend = change_time;
         })
 
 
@@ -778,9 +763,6 @@ const app = {
         // Xử lý sự kiện thay dổi options sortList
         options.onchange = function() {
             _this.defind_sort_list(options.value)
-            
-            console.log()
-
             // Song.active - Stupid
             listSongs_songs_main.forEach(function(e) {
 
@@ -801,24 +783,17 @@ const app = {
             })
         }
 
-
         // Xử lý tìm kiếm bài hát
         side_input.addEventListener('keydown',function(event) {   
             if(event.key == "Enter") {
                 handle_result() 
-                var windowWidth = $(document).width();
-                if(windowWidth < 1020) {
-                    // side_narbar_item.click()
-                    side_narbar_menu.click()
-                    // return check = true;
-                }
+                // var windowWidth = $(document).width();
+                // if(windowWidth < 1020) {
+                //     side_narbar_menu.click()
+                // }
             }
         })
-
-        // side_input.
-
         
-
         function handle_result() {
             if(side_input.value != "") {
                 // ====================UI====================
@@ -936,7 +911,7 @@ const app = {
 
                         }
                     }
-                    console.log(overlay_listSongs)
+
                     overlay_listSongs.onclick = function(element) {
                         const songNode = element.target.closest('.song:not(.active)')
                         if(songNode) {
@@ -1025,8 +1000,7 @@ const app = {
     },
 
     loadCurrentSong: function() { 
-        
-
+    
         // Current Info in Footer
         info_name.textContent = this.currentSong.name
         info_author.textContent = this.currentSong.author
@@ -1145,9 +1119,6 @@ const app = {
             random[i].classList.toggle('active', this.isRandom)
             loop[i].classList.remove('active', this.isRandom)
         }
-
-        // for(var i = 0; i < loop.length; i++) {
-        // }
     },
 
     
