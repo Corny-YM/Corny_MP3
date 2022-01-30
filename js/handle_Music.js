@@ -605,6 +605,16 @@ const app = {
                         audio.currentTime = seekTime
                         isMoving = false // Đang không di chuyển thanh thời gian
                     }
+                    element.ontouchmove = function() {
+                        // thời gian tại địa điểm changed
+                        audio.currentTime = seekTime
+                        isMoving = true // Đang không di chuyển thanh thời gian
+                    }
+                    element.ontouchstart = function() {
+                        // thời gian tại địa điểm changed
+                        audio.currentTime = seekTime
+                        isMoving = true // Đang không di chuyển thanh thời gian
+                    }
                     element.ontouchend = function() {
                         // thời gian tại địa điểm changed
                         audio.currentTime = seekTime
@@ -620,8 +630,7 @@ const app = {
                 }
             }
             element.oninput = change_time
-            element.ontouchstart = change_time;
-            element.ontouchend = change_time;
+            
         })
 
 
