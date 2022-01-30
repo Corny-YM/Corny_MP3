@@ -105,10 +105,10 @@ side_narbar_menu.addEventListener('click', function() {
 
     if(check == false) {
         compress_side();
-        return check = true;
+        check = true;
     } else {
         expand_side();
-        return check = false;
+        check = false;
     }
 })
 
