@@ -793,15 +793,7 @@ const app = {
                 // }
             }
         }
-        // side_input.addEventListener('keydown',function(event) {   
-        //     if(event.key == "Enter") {
-        //         handle_result() 
-        //         // var windowWidth = $(document).width();
-        //         // if(windowWidth < 1020) {
-        //         //     side_narbar_menu.click()
-        //         // }
-        //     }
-        // })
+        
         
         function handle_result() {
             if(side_input.value != "") {
