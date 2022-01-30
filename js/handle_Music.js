@@ -620,7 +620,8 @@ const app = {
                 }
             }
             element.oninput = change_time
-            element.ontouchmove = change_time 
+            element.ontouchstart = change_time;
+            element.ontouchend = change_time;
         })
 
 
@@ -804,6 +805,8 @@ const app = {
                 }
             }
         })
+
+        // side_input.
 
         
 
