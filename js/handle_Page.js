@@ -113,12 +113,9 @@ side_narbar_menu.addEventListener('click', function() {
 })
 
 search_btn.addEventListener('click', function() {
-    var windowWidth = $(document).width();
-    if(windowWidth > 768) {
-        expand_side();
-        search_input.focus();
-        return check = false;
-    }
+    expand_side();
+    search_input.focus();
+    check = false;
 })
 
 // Item SIDE
@@ -139,7 +136,7 @@ my_music.onclick = function() {
     }
     if(windowWidth <= 1020) {
         compress_side();
-        return check = true;
+        check = true;
     }    
 }
 
@@ -183,7 +180,7 @@ currently_playing.onclick = function() {
     }
     if(windowWidth <= 1020) {
         compress_side();
-        return check = true;
+        check = true;
     }    
 }
 
@@ -292,12 +289,12 @@ window.addEventListener('resize', function() {
             take_one('.listSongs').style.marginLeft = 50+'px'
         }
         compress_side();
-        return check = true;
+        check = true;
     } else {
         side.style.position = 'relative'
         take_one('.listSongs').style.marginLeft = 0+'px'
         expand_side();
-        return check = false;
+        check = false;
     };
 
 })
