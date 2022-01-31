@@ -42,12 +42,6 @@ overlay_listSongs_songs = take_one('.overlay_listSongs_songs')
 // =====FUNCTION===== 
 // 1.Side
 function compress_side() {
-    var windowWidth = $(document).width();
-    if(windowWidth <= 768) {
-        search_bar.classList.toggle('side_content_changed')
-        side_content.classList.toggle('side_search-bar_changed')
-        side.classList.toggle('side_changed_height')
-    }
     side.style.width = 50+'px'
     side_logo.style.display = 'none'
     search_bar.style.padding = '0'
@@ -70,14 +64,7 @@ function compress_side() {
 }
 
 function expand_side() {
-    var windowWidth = $(document).width();
-    if(windowWidth <= 768) {
-        search_bar.classList.toggle('side_content_changed')
-        side_content.classList.toggle('side_search-bar_changed')
-        side.classList.toggle('side_changed_height')
-    }
     side.style.zIndex = 99999 
-    
     side.style.width = 280+'px'
     side_logo.style.display = 'flex'
     if(check == true) {
@@ -102,14 +89,26 @@ function expand_side() {
     })
 }
 
+var side_overlay = take_one('.side_overlay')
 var check;
 side_narbar_menu.addEventListener('click', function() {
     var windowWidth = $(document).width();
-
     if(check == false) {
+        if(windowWidth <= 768) {
+            side_overlay.classList.add('display_none')
+            search_bar.classList.remove('side_content_changed')
+            side_content.classList.remove('side_search-bar_changed')
+            side.classList.remove('side_changed_height')
+        }
         compress_side();
         check = true;
     } else {
+        if(windowWidth <= 768) {
+            side_overlay.classList.remove('display_none')
+            search_bar.classList.add('side_content_changed')
+            side_content.classList.add('side_search-bar_changed')
+            side.classList.add('side_changed_height')
+        }
         expand_side();
         check = false;
     }
@@ -134,6 +133,7 @@ my_music.onclick = function() {
     var windowWidth = $(document).width();
     
     if(windowWidth <= 768) {
+        side_overlay.classList.add('display_none')
         search_bar.classList.remove('side_content_changed')
         side_content.classList.remove('side_search-bar_changed')
         side.classList.remove('side_changed_height')
@@ -152,6 +152,7 @@ recent_content.onclick = function() {
     recent_content.classList.add('active')
     var windowWidth = $(document).width();
     if(windowWidth <= 768) {
+        side_overlay.classList.add('display_none')
         search_bar.classList.remove('side_content_changed')
         side_content.classList.remove('side_search-bar_changed')
         side.classList.remove('side_changed_height')
@@ -178,6 +179,7 @@ currently_playing.onclick = function() {
     currently_playing.classList.add('active')
     var windowWidth = $(document).width();
     if(windowWidth <= 768) {
+        side_overlay.classList.add('display_none')
         search_bar.classList.remove('side_content_changed')
         side_content.classList.remove('side_search-bar_changed')
         side.classList.remove('side_changed_height')
@@ -188,6 +190,9 @@ currently_playing.onclick = function() {
     }    
 }
 
+
+
+
 // Songs - listSongs_menu
 const listSongs_controls = take_one('.listSongs_controls')
 const listSongs_songs = take_one('.listSongs_songs')
@@ -195,7 +200,6 @@ const listSongs_songs = take_one('.listSongs_songs')
 const listSongs_authors = take_one('.listSongs_authors')
 // Albums - listSongs_menu
 const listSongs_albums = take_one('.listSongs_albums')
-
 
 // 2.listSongs
 listSongs_menu_item.forEach(function(item, index) {
