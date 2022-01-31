@@ -48,8 +48,8 @@ function compress_side() {
             display: 'none',
             height: 50+'px'
         });
+        side.style.width = 50+'px'
     }
-    side.style.width = 50+'px'
     side_logo.style.display = 'none'
     search_bar.style.padding = '0'
     Object.assign(search_btn.style, {
@@ -79,8 +79,8 @@ function expand_side() {
     side_logo.style.display = 'flex'
     search_bar.style.padding = '7px 16px'
     Object.assign(search_btn.style, {
-        display: 'block',
         position: 'absolute',
+        display: 'block',
         width: 'unset',
         height: 'unset',
         top: '50%',
@@ -103,27 +103,59 @@ side_narbar_menu.onclick = function() {
             side_overlay.classList.add('display_none')
             search_bar.classList.remove('side_content_changed')
             side_content.classList.remove('side_search-bar_changed')
+
             side.classList.remove('side_changed_height')
-            search_input.classList.remove('search_input_changed')
             side.classList.remove('side_changed_width')
+            search_input.classList.remove('search_input_changed')
+
+            side_logo.classList.remove('changed_expand')
+            search_bar.classList.remove('changed_expand')
+            search_btn.classList.remove('changed_expand')
+            side_content_text.forEach(function(e) {
+                e.classList.remove('changed_expand')
+            })
+
+            side_logo.classList.add('changed_compress')
+            search_bar.classList.add('changed_compress')
+            search_btn.classList.add('changed_compress')
+            side_content_text.forEach(function(e) {
+                e.classList.add('changed_compress')
+            })
+
+        } else {
+            compress_side();
         }
-        compress_side();
         check = true;
     } else {
         if(windowWidth <= 768) {
             side_overlay.classList.remove('display_none')
             search_bar.classList.add('side_content_changed')
             side_content.classList.add('side_search-bar_changed')
+
             side.classList.add('side_changed_height')
-            search_input.classList.add('search_input_changed')
             side.classList.add('side_changed_width')
+            search_input.classList.add('search_input_changed')
+
+            side_logo.classList.remove('changed_compress')
+            search_bar.classList.remove('changed_compress')
+            search_btn.classList.remove('changed_compress')
+            side_content_text.forEach(function(e) {
+                e.classList.remove('changed_compress')
+            })
+
+            side_logo.classList.add('changed_expand')
+            search_bar.classList.add('changed_expand')
+            search_btn.classList.add('changed_expand')
+            side_content_text.forEach(function(e) {
+                e.classList.add('changed_expand')
+            })
+            
+        } else {
+            expand_side();
         }
-        expand_side();
         check = false;
     }
 }
-
-
 
 search_btn.addEventListener('click', function(event) {
     event.preventDefault()
@@ -147,9 +179,26 @@ my_music.onclick = function() {
         side_overlay.classList.add('display_none')
         search_bar.classList.remove('side_content_changed')
         side_content.classList.remove('side_search-bar_changed')
+
         side.classList.remove('side_changed_height')
-    }
-    if(windowWidth <= 1020) {
+        side.classList.remove('side_changed_width')
+        search_input.classList.remove('search_input_changed')
+
+        side_logo.classList.remove('changed_expand')
+        search_bar.classList.remove('changed_expand')
+        search_btn.classList.remove('changed_expand')
+        side_content_text.forEach(function(e) {
+            e.classList.remove('changed_expand')
+        })
+
+        side_logo.classList.add('changed_compress')
+        search_bar.classList.add('changed_compress')
+        search_btn.classList.add('changed_compress')
+        side_content_text.forEach(function(e) {
+            e.classList.add('changed_compress')
+        })
+        check = true;
+    } else if(windowWidth > 768 && windowWidth <= 1020) {
         compress_side();
         check = true;
     }    
@@ -166,12 +215,29 @@ recent_content.onclick = function() {
         side_overlay.classList.add('display_none')
         search_bar.classList.remove('side_content_changed')
         side_content.classList.remove('side_search-bar_changed')
+
         side.classList.remove('side_changed_height')
-    }
-    if(windowWidth <= 1020) {
+        side.classList.remove('side_changed_width')
+        search_input.classList.remove('search_input_changed')
+
+        side_logo.classList.remove('changed_expand')
+        search_bar.classList.remove('changed_expand')
+        search_btn.classList.remove('changed_expand')
+        side_content_text.forEach(function(e) {
+            e.classList.remove('changed_expand')
+        })
+
+        side_logo.classList.add('changed_compress')
+        search_bar.classList.add('changed_compress')
+        search_btn.classList.add('changed_compress')
+        side_content_text.forEach(function(e) {
+            e.classList.add('changed_compress')
+        })
+        check = true;
+    } else if(windowWidth > 768 && windowWidth <= 1020) {
         compress_side();
         check = true;
-    }   
+    }      
     toast({
         notify: "Thông báo",
         title: "Tính năng này chưa được cập nhật... sr ಥ_ಥ",
@@ -193,15 +259,30 @@ currently_playing.onclick = function() {
         side_overlay.classList.add('display_none')
         search_bar.classList.remove('side_content_changed')
         side_content.classList.remove('side_search-bar_changed')
+
         side.classList.remove('side_changed_height')
-    }
-    if(windowWidth <= 1020) {
+        side.classList.remove('side_changed_width')
+        search_input.classList.remove('search_input_changed')
+
+        side_logo.classList.remove('changed_expand')
+        search_bar.classList.remove('changed_expand')
+        search_btn.classList.remove('changed_expand')
+        side_content_text.forEach(function(e) {
+            e.classList.remove('changed_expand')
+        })
+
+        side_logo.classList.add('changed_compress')
+        search_bar.classList.add('changed_compress')
+        search_btn.classList.add('changed_compress')
+        side_content_text.forEach(function(e) {
+            e.classList.add('changed_compress')
+        })
+        check = true;
+    } else if(windowWidth > 768 && windowWidth <= 1020) {
         compress_side();
         check = true;
-    }    
+    }   
 }
-
-
 
 
 // Songs - listSongs_menu
