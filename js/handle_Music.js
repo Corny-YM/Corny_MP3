@@ -1,6 +1,5 @@
 // listSongs: Body & Overlay 
 const listSongs_songs_main = take_all("#listSongs_songs_main"); 
-console.log(listSongs_songs_main)
 
 // listSongs:
 const playRandom = take_one('.playRandom')
