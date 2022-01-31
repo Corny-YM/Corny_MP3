@@ -40,7 +40,8 @@ overlay_listSongs_songs = take_one('.overlay_listSongs_songs')
 
 
 // =====FUNCTION===== 
-function compress_side_mobile() {
+// 1.Side
+function compress_side() {
     side.style.width = 50+'px'
     side_logo.style.display = 'none'
     search_bar.style.padding = '0'
@@ -48,40 +49,6 @@ function compress_side_mobile() {
         display: 'none',
         height: 50+'px'
     });
-    Object.assign(search_btn.style, {
-        position: 'unset',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        transform: 'none',
-        width: 50+'px',
-        height: 50+'px',
-    });
-    side_content_text.forEach(function(content) {
-        content.style.display = 'none'
-    })
-}
-// 1.Side
-var check_input = false
-search_input.addEventListener('keydown', function(event) {
-    check_input = true
-    console.log(check_input)
-    if(event.key == "Enter") {
-        return check_input = false    
-    }
-})
-console.log(check_input)
-
-function compress_side() {
-    side.style.width = 50+'px'
-    side_logo.style.display = 'none'
-    search_bar.style.padding = '0'
-    if(check_input == false) {
-        Object.assign(search_input.style, {
-            display: 'none',
-            height: 50+'px'
-        });
-    }
     Object.assign(search_btn.style, {
         position: 'unset',
         display: 'flex',
@@ -134,7 +101,7 @@ side_narbar_menu.onclick = function() {
             side_content.classList.remove('side_search-bar_changed')
             side.classList.remove('side_changed_height')
         }
-        compress_side();
+        // compress_side();
         check = true;
     } else {
         if(windowWidth <= 768) {
