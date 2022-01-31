@@ -785,6 +785,7 @@ const app = {
 
 
         side_input.addEventListener('touchstart', function(event) {
+            // check = true
             event.preventDefault()
             setTimeout(function() {
                 side_input.focus()
@@ -793,7 +794,9 @@ const app = {
                 handle_result() 
                 var windowWidth = $(document).width();
                 if(windowWidth < 1020) {
-                    side_narbar_menu.click()
+                    // side_narbar_menu.click()
+                    compress_side()
+                    check = true
                 }
             }
         })

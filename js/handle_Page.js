@@ -41,32 +41,41 @@ overlay_listSongs_songs = take_one('.overlay_listSongs_songs')
 
 // =====FUNCTION===== 
 // 1.Side
-// function compress_side() {
-//     var windowWidth = $(document).width();
-//     side.style.width = 50+'px'
-//     side_logo.style.display = 'none'
-//     search_bar.style.padding = '0'
-//     Object.assign(search_input.style, {
-//         display: 'none',
-//         height: 50+'px'
-//     });
-//     Object.assign(search_btn.style, {
-//         position: 'unset',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         transform: 'none',
-//         width: 50+'px',
-//         height: 50+'px',
-//     });
-//     side_content_text.forEach(function(content) {
-//         content.style.display = 'none'
-//     })
-// }
+function compress_side() {
+    var windowWidth = $(document).width();
+    if(windowWidth <= 768) {
+        search_bar.classList.toggle('side_content_changed')
+        side_content.classList.toggle('side_search-bar_changed')
+        side.classList.toggle('side_changed_height')
+    }
+    side.style.width = 50+'px'
+    side_logo.style.display = 'none'
+    search_bar.style.padding = '0'
+    Object.assign(search_input.style, {
+        display: 'none',
+        height: 50+'px'
+    });
+    Object.assign(search_btn.style, {
+        position: 'unset',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        transform: 'none',
+        width: 50+'px',
+        height: 50+'px',
+    });
+    side_content_text.forEach(function(content) {
+        content.style.display = 'none'
+    })
+}
 
 function expand_side() {
     var windowWidth = $(document).width();
-    
+    if(windowWidth <= 768) {
+        search_bar.classList.toggle('side_content_changed')
+        side_content.classList.toggle('side_search-bar_changed')
+        side.classList.toggle('side_changed_height')
+    }
     side.style.zIndex = 99999 
     
     side.style.width = 280+'px'
@@ -96,12 +105,6 @@ function expand_side() {
 var check;
 side_narbar_menu.addEventListener('click', function() {
     var windowWidth = $(document).width();
-    
-    if(windowWidth <= 768) {
-        search_bar.classList.toggle('side_content_changed')
-        side_content.classList.toggle('side_search-bar_changed')
-        side.classList.toggle('side_changed_height')
-    }
 
     if(check == false) {
         compress_side();
