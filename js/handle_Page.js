@@ -322,7 +322,7 @@ window.addEventListener('resize', function() {
         } else {
             take_one('.listSongs').style.marginLeft = 50+'px'
         }
-        // compress_side();
+        compress_side();
         check = true;
     } else {
         side.style.position = 'relative'
