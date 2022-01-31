@@ -151,3 +151,11 @@
     bottom: 0;
     z-index: -99;
 }
+
+.side_changed_width {
+    width: 280px !important;
+}
+.search_input_changed {
+    display: block !important;
+    height: unset !important;
+}

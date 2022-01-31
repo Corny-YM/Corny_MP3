@@ -42,13 +42,16 @@ overlay_listSongs_songs = take_one('.overlay_listSongs_songs')
 // =====FUNCTION===== 
 // 1.Side
 function compress_side() {
+    var windowWidth = $(document).width();
+    if(windowWidth > 768) {
+        Object.assign(search_input.style, {
+            display: 'none',
+            height: 50+'px'
+        });
+    }
     side.style.width = 50+'px'
     side_logo.style.display = 'none'
     search_bar.style.padding = '0'
-    Object.assign(search_input.style, {
-        display: 'none',
-        height: 50+'px'
-    });
     Object.assign(search_btn.style, {
         position: 'unset',
         display: 'flex',
@@ -64,16 +67,17 @@ function compress_side() {
 }
 
 function expand_side() {
+    var windowWidth = $(document).width();
+    if(windowWidth > 768) {
+        Object.assign(search_input.style, {
+            display: 'block',
+            height: 'unset'
+        });
+    }
     side.style.zIndex = 99999 
     side.style.width = 280+'px'
     side_logo.style.display = 'flex'
-    if(check == true) {
-    }
     search_bar.style.padding = '7px 16px'
-    Object.assign(search_input.style, {
-        display: 'block',
-        height: 'unset'
-    });
     Object.assign(search_btn.style, {
         display: 'block',
         position: 'absolute',
@@ -100,8 +104,10 @@ side_narbar_menu.onclick = function() {
             search_bar.classList.remove('side_content_changed')
             side_content.classList.remove('side_search-bar_changed')
             side.classList.remove('side_changed_height')
+            search_input.classList.remove('search_input_changed')
+            side.classList.remove('side_changed_width')
         }
-        // compress_side();
+        compress_side();
         check = true;
     } else {
         if(windowWidth <= 768) {
@@ -109,6 +115,8 @@ side_narbar_menu.onclick = function() {
             search_bar.classList.add('side_content_changed')
             side_content.classList.add('side_search-bar_changed')
             side.classList.add('side_changed_height')
+            search_input.classList.add('search_input_changed')
+            side.classList.remove('side_changed_width')
         }
         expand_side();
         check = false;
