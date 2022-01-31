@@ -41,28 +41,28 @@ overlay_listSongs_songs = take_one('.overlay_listSongs_songs')
 
 // =====FUNCTION===== 
 // 1.Side
-function compress_side() {
-    var windowWidth = $(document).width();
-    side.style.width = 50+'px'
-    side_logo.style.display = 'none'
-    search_bar.style.padding = '0'
-    Object.assign(search_input.style, {
-        display: 'none',
-        height: 50+'px'
-    });
-    Object.assign(search_btn.style, {
-        position: 'unset',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        transform: 'none',
-        width: 50+'px',
-        height: 50+'px',
-    });
-    side_content_text.forEach(function(content) {
-        content.style.display = 'none'
-    })
-}
+// function compress_side() {
+//     var windowWidth = $(document).width();
+//     side.style.width = 50+'px'
+//     side_logo.style.display = 'none'
+//     search_bar.style.padding = '0'
+//     Object.assign(search_input.style, {
+//         display: 'none',
+//         height: 50+'px'
+//     });
+//     Object.assign(search_btn.style, {
+//         position: 'unset',
+//         display: 'flex',
+//         justifyContent: 'center',
+//         alignItems: 'center',
+//         transform: 'none',
+//         width: 50+'px',
+//         height: 50+'px',
+//     });
+//     side_content_text.forEach(function(content) {
+//         content.style.display = 'none'
+//     })
+// }
 
 function expand_side() {
     var windowWidth = $(document).width();
