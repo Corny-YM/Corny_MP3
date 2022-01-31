@@ -114,12 +114,12 @@ side_narbar_menu.addEventListener('click', function() {
     }
 })
 
-search_btn.addEventListener('click', function(event) {
-    event.preventDefault()
-    expand_side();
-    search_input.focus();
-    check = false;
-})
+// search_btn.addEventListener('click', function(event) {
+//     event.preventDefault()
+//     expand_side();
+//     search_input.focus();
+//     check = false;
+// })
 
 // Item SIDE
 my_music.onclick = function() {
