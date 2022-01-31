@@ -41,27 +41,27 @@ overlay_listSongs_songs = take_one('.overlay_listSongs_songs')
 
 // =====FUNCTION===== 
 // 1.Side
-function compress_side() {
-    side.style.width = 50+'px'
-    side_logo.style.display = 'none'
-    search_bar.style.padding = '0'
-    Object.assign(search_input.style, {
-        display: 'none',
-        height: 50+'px'
-    });
-    Object.assign(search_btn.style, {
-        position: 'unset',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        transform: 'none',
-        width: 50+'px',
-        height: 50+'px',
-    });
-    side_content_text.forEach(function(content) {
-        content.style.display = 'none'
-    })
-}
+// function compress_side() {
+//     side.style.width = 50+'px'
+//     side_logo.style.display = 'none'
+//     search_bar.style.padding = '0'
+//     Object.assign(search_input.style, {
+//         display: 'none',
+//         height: 50+'px'
+//     });
+//     Object.assign(search_btn.style, {
+//         position: 'unset',
+//         display: 'flex',
+//         justifyContent: 'center',
+//         alignItems: 'center',
+//         transform: 'none',
+//         width: 50+'px',
+//         height: 50+'px',
+//     });
+//     side_content_text.forEach(function(content) {
+//         content.style.display = 'none'
+//     })
+// }
 
 function expand_side() {
     side.style.zIndex = 99999 
@@ -117,78 +117,78 @@ side_narbar_menu.addEventListener('click', function() {
 search_btn.addEventListener('click', function(event) {
     event.preventDefault()
     expand_side();
-    // search_input.focus();
+    search_input.focus();
     check = false;
 })
 
 // Item SIDE
-// my_music.onclick = function() {
-//     listSongs.classList.remove('display_none')
-//     result.classList.remove('display_block')
-//     var item_active = take_one('.side_content-item.active')
-//     if(item_active) {
-//         item_active.classList.remove('active')
-//     }
-//     my_music.classList.add('active')
-//     var windowWidth = $(document).width();
+my_music.onclick = function() {
+    listSongs.classList.remove('display_none')
+    result.classList.remove('display_block')
+    var item_active = take_one('.side_content-item.active')
+    if(item_active) {
+        item_active.classList.remove('active')
+    }
+    my_music.classList.add('active')
+    var windowWidth = $(document).width();
     
-//     if(windowWidth <= 768) {
-//         side_overlay.classList.add('display_none')
-//         search_bar.classList.remove('side_content_changed')
-//         side_content.classList.remove('side_search-bar_changed')
-//         side.classList.remove('side_changed_height')
-//     }
-//     if(windowWidth <= 1020) {
-//         compress_side();
-//         check = true;
-//     }    
-// }
+    if(windowWidth <= 768) {
+        side_overlay.classList.add('display_none')
+        search_bar.classList.remove('side_content_changed')
+        side_content.classList.remove('side_search-bar_changed')
+        side.classList.remove('side_changed_height')
+    }
+    if(windowWidth <= 1020) {
+        compress_side();
+        check = true;
+    }    
+}
 
-// recent_content.onclick = function() {
-//     var item_active = take_one('.side_content-item.active')
-//     if(item_active) {
-//         item_active.classList.remove('active')
-//     }
-//     recent_content.classList.add('active')
-//     var windowWidth = $(document).width();
-//     if(windowWidth <= 768) {
-//         side_overlay.classList.add('display_none')
-//         search_bar.classList.remove('side_content_changed')
-//         side_content.classList.remove('side_search-bar_changed')
-//         side.classList.remove('side_changed_height')
-//     }
-//     if(windowWidth <= 1020) {
-//         compress_side();
-//         check = true;
-//     }   
-//     toast({
-//         notify: "Thông báo",
-//         title: "Tính năng này chưa được cập nhật... sr ಥ_ಥ",
-//         type: "main",
-//         duration: 2000
-//     })
-// }
+recent_content.onclick = function() {
+    var item_active = take_one('.side_content-item.active')
+    if(item_active) {
+        item_active.classList.remove('active')
+    }
+    recent_content.classList.add('active')
+    var windowWidth = $(document).width();
+    if(windowWidth <= 768) {
+        side_overlay.classList.add('display_none')
+        search_bar.classList.remove('side_content_changed')
+        side_content.classList.remove('side_search-bar_changed')
+        side.classList.remove('side_changed_height')
+    }
+    if(windowWidth <= 1020) {
+        compress_side();
+        check = true;
+    }   
+    toast({
+        notify: "Thông báo",
+        title: "Tính năng này chưa được cập nhật... sr ಥ_ಥ",
+        type: "main",
+        duration: 2000
+    })
+}
 
-// currently_playing.onclick = function() {
-//     setTimeout(openOverlay(), 300)
+currently_playing.onclick = function() {
+    setTimeout(openOverlay(), 300)
     
-//     var item_active = take_one('.side_content-item.active')
-//     if(item_active) {
-//         item_active.classList.remove('active')
-//     }
-//     currently_playing.classList.add('active')
-//     var windowWidth = $(document).width();
-//     if(windowWidth <= 768) {
-//         side_overlay.classList.add('display_none')
-//         search_bar.classList.remove('side_content_changed')
-//         side_content.classList.remove('side_search-bar_changed')
-//         side.classList.remove('side_changed_height')
-//     }
-//     if(windowWidth <= 1020) {
-//         compress_side();
-//         check = true;
-//     }    
-// }
+    var item_active = take_one('.side_content-item.active')
+    if(item_active) {
+        item_active.classList.remove('active')
+    }
+    currently_playing.classList.add('active')
+    var windowWidth = $(document).width();
+    if(windowWidth <= 768) {
+        side_overlay.classList.add('display_none')
+        search_bar.classList.remove('side_content_changed')
+        side_content.classList.remove('side_search-bar_changed')
+        side.classList.remove('side_changed_height')
+    }
+    if(windowWidth <= 1020) {
+        compress_side();
+        check = true;
+    }    
+}
 
 
 
