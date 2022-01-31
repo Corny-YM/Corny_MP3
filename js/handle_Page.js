@@ -116,7 +116,7 @@ side_narbar_menu.onclick = function() {
             side_content.classList.add('side_search-bar_changed')
             side.classList.add('side_changed_height')
             search_input.classList.add('search_input_changed')
-            side.classList.remove('side_changed_width')
+            side.classList.add('side_changed_width')
         }
         expand_side();
         check = false;
