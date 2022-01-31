@@ -135,7 +135,8 @@ side_narbar_menu.onclick = function() {
     }
 }
 
-search_input.addEventListener('click', function() {
+console.log(search_input)
+search_input.addEventListener('focus', function() {
     expand_side();
     check = false;
 })
