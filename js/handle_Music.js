@@ -785,7 +785,7 @@ const app = {
 
                 
         // Xử lý tìm kiếm bài hát
-        side_input.onkeydown = function(event) {
+        search_input.addEventListener('keydown', function(event) {
             if(event.key == "Enter") {
                 handle_result() 
                 var windowWidth = $(document).width();
@@ -793,7 +793,7 @@ const app = {
                     side_narbar_menu.click()
                 }
             }
-        }
+        })
         
         function handle_result() {
             if(side_input.value != "") {

@@ -62,14 +62,26 @@ function compress_side_mobile() {
     })
 }
 // 1.Side
+var check_input = false
+search_input.addEventListener('keydown', function(event) {
+    check_input = true
+    console.log(check_input)
+    if(event.key == "Enter") {
+        return check_input = false    
+    }
+})
+console.log(check_input)
+
 function compress_side() {
     side.style.width = 50+'px'
     side_logo.style.display = 'none'
     search_bar.style.padding = '0'
-    Object.assign(search_input.style, {
-        display: 'none',
-        height: 50+'px'
-    });
+    if(check_input == false) {
+        Object.assign(search_input.style, {
+            display: 'none',
+            height: 50+'px'
+        });
+    }
     Object.assign(search_btn.style, {
         position: 'unset',
         display: 'flex',
@@ -110,6 +122,7 @@ function expand_side() {
     })
 }
 
+
 var side_overlay = take_one('.side_overlay')
 var check;
 side_narbar_menu.onclick = function() {
@@ -121,7 +134,7 @@ side_narbar_menu.onclick = function() {
             side_content.classList.remove('side_search-bar_changed')
             side.classList.remove('side_changed_height')
         }
-        // compress_side();
+        compress_side();
         check = true;
     } else {
         if(windowWidth <= 768) {
@@ -135,10 +148,7 @@ side_narbar_menu.onclick = function() {
     }
 }
 
-search_input.addEventListener('focus', function() {
-    expand_side();
-    check = false;
-})
+
 
 search_btn.addEventListener('click', function(event) {
     event.preventDefault()
