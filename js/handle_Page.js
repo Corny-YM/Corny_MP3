@@ -121,7 +121,7 @@ side_narbar_menu.onclick = function() {
             side_content.classList.remove('side_search-bar_changed')
             side.classList.remove('side_changed_height')
         }
-        compress_side();
+        // compress_side();
         check = true;
     } else {
         if(windowWidth <= 768) {
@@ -135,7 +135,6 @@ side_narbar_menu.onclick = function() {
     }
 }
 
-console.log(search_input)
 search_input.addEventListener('focus', function() {
     expand_side();
     check = false;
@@ -166,7 +165,7 @@ my_music.onclick = function() {
         side.classList.remove('side_changed_height')
     }
     if(windowWidth <= 1020) {
-        compress_side();
+        // compress_side();
         check = true;
     }    
 }
@@ -185,7 +184,7 @@ recent_content.onclick = function() {
         side.classList.remove('side_changed_height')
     }
     if(windowWidth <= 1020) {
-        compress_side();
+        // compress_side();
         check = true;
     }   
     toast({
@@ -212,7 +211,7 @@ currently_playing.onclick = function() {
         side.classList.remove('side_changed_height')
     }
     if(windowWidth <= 1020) {
-        compress_side();
+        // compress_side();
         check = true;
     }    
 }
@@ -323,7 +322,7 @@ window.addEventListener('resize', function() {
         } else {
             take_one('.listSongs').style.marginLeft = 50+'px'
         }
-        compress_side();
+        // compress_side();
         check = true;
     } else {
         side.style.position = 'relative'
