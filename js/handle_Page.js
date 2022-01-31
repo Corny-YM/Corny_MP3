@@ -117,7 +117,7 @@ side_narbar_menu.addEventListener('click', function() {
 search_btn.addEventListener('click', function(event) {
     event.preventDefault()
     expand_side();
-    search_input.focus();
+    // search_input.focus();
     check = false;
 })
 
