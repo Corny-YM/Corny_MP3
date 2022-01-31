@@ -165,7 +165,7 @@ my_music.onclick = function() {
         side.classList.remove('side_changed_height')
     }
     if(windowWidth <= 1020) {
-        // compress_side();
+        compress_side();
         check = true;
     }    
 }
@@ -184,7 +184,7 @@ recent_content.onclick = function() {
         side.classList.remove('side_changed_height')
     }
     if(windowWidth <= 1020) {
-        // compress_side();
+        compress_side();
         check = true;
     }   
     toast({
@@ -211,7 +211,7 @@ currently_playing.onclick = function() {
         side.classList.remove('side_changed_height')
     }
     if(windowWidth <= 1020) {
-        // compress_side();
+        compress_side();
         check = true;
     }    
 }
