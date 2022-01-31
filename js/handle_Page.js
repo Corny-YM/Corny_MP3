@@ -100,7 +100,7 @@ side_narbar_menu.addEventListener('click', function() {
             side_content.classList.remove('side_search-bar_changed')
             side.classList.remove('side_changed_height')
         }
-        // compress_side();
+        compress_side();
         check = true;
     } else {
         if(windowWidth <= 768) {

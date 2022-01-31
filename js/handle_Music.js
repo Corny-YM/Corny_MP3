@@ -956,12 +956,12 @@ const app = {
                 _this.songs = _this.songSort_default
 
                 side_content_item.forEach(function(item) {
-                    item.addEventListener('click', function() {
+                    item.onclick = function() {
                         _this.currentIndex = Math.floor(Math.random() * app.songs.length)
                         _this.songs = _this.songSort_default
                         options.value = "default"
                         _this.render()
-                    })
+                    }
                 })
                 // Set input value to default
                 side_input.value = ""
