@@ -67,7 +67,6 @@ function compress_side() {
     side_content_text.forEach(function(content) {
         content.style.display = 'none'
     })
-    check = true;
 }
 
 function expand_side() {
@@ -101,8 +100,6 @@ function expand_side() {
     side_content_text.forEach(function(content) {
         content.style.display = 'block'
     })
-    check = false;
-
 }
 
 var check;
@@ -111,12 +108,15 @@ side_narbar_menu.addEventListener('click', function() {
 
     if(check == false) {
         compress_side();
+        check = true;
     } else {
         expand_side();
+        check = false;
     }
 })
 
-search_btn.addEventListener('click', function() {
+search_btn.addEventListener('click', function(event) {
+    event.preventDefault()
     expand_side();
     search_input.focus();
     check = false;
