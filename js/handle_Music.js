@@ -784,7 +784,7 @@ const app = {
         }
 
 
-        side_input.addEventListener('touch', function(event) {
+        side_input.addEventListener('touchstart', function(event) {
             event.preventDefault()
             setTimeout(function() {
                 side_input.focus()
