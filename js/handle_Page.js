@@ -91,7 +91,7 @@ function expand_side() {
 
 var side_overlay = take_one('.side_overlay')
 var check;
-side_narbar_menu.addEventListener('click', function() {
+side_narbar_menu.onclick = function() {
     var windowWidth = $(document).width();
     if(check == false) {
         if(windowWidth <= 768) {
@@ -112,14 +112,15 @@ side_narbar_menu.addEventListener('click', function() {
         expand_side();
         check = false;
     }
-})
+}
 
-// search_btn.addEventListener('click', function(event) {
-//     event.preventDefault()
-//     expand_side();
-//     search_input.focus();
-//     check = false;
-// })
+
+search_btn.addEventListener('click', function(event) {
+    event.preventDefault()
+    expand_side();
+    search_input.focus();
+    check = false;
+})
 
 // Item SIDE
 my_music.onclick = function() {

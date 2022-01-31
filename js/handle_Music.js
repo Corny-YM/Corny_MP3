@@ -783,20 +783,6 @@ const app = {
             })
         }
 
-
-        side_input.addEventListener('touchstart', function(event) {
-            event.preventDefault()
-            setTimeout(function() {
-                side_input.focus()
-            }, 500)
-            if(event.key == "Enter") {
-                handle_result() 
-                var windowWidth = $(document).width();
-                if(windowWidth < 1020) {
-                    side_narbar_menu.click()
-                }
-            }
-        })
                 
         // Xử lý tìm kiếm bài hát
         side_input.onkeydown = function(event) {
@@ -808,8 +794,6 @@ const app = {
                 }
             }
         }
-        
-
         
         function handle_result() {
             if(side_input.value != "") {
@@ -956,12 +940,12 @@ const app = {
                 _this.songs = _this.songSort_default
 
                 side_content_item.forEach(function(item) {
-                    item.onclick = function() {
+                    item.addEventListener('click', function() {
                         _this.currentIndex = Math.floor(Math.random() * app.songs.length)
                         _this.songs = _this.songSort_default
                         options.value = "default"
                         _this.render()
-                    }
+                    })
                 })
                 // Set input value to default
                 side_input.value = ""
