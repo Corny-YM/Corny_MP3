@@ -721,9 +721,14 @@ const app = {
         loop.forEach(function(e) {
             e.onclick = function() {
                 _this.isLoop = !_this.isLoop
+                console.log(_this.isLoop)
                 if(_this.isLoop) {
                     for(var i = 0; i < loop.length; i++) {
-                        loop[i].classList.toggle('active', _this.isLoop)
+                        loop[i].classList.add('active', _this.isLoop)
+                    }
+                } else {
+                    for(var i = 0; i < loop.length; i++) {
+                        loop[i].classList.remove('active', _this.isLoop)
                     }
                 }
             }
@@ -1117,7 +1122,9 @@ const app = {
         // Đối số thứ 2 của toggle là lấy giá trị boolean để kiếm tra
         for(var i = 0; i < random.length; i++) {
             random[i].classList.toggle('active', this.isRandom)
-            loop[i].classList.remove('active', this.isRandom)
+        }
+        for(var i = 0; i < loop.length; i++) {
+            loop[i].classList.remove('active', this.isLoop)
         }
     },
 
